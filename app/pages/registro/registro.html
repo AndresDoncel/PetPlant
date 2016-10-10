@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar primary>
+    <ion-title style="margin-left:6em;">Registro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Correo</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Genero</ion-label>
+      <ion-select [(ngModel)]="gender" cancelText="Cancelar" okText="Ok">
+        <ion-option value="Masculino" checked="true">M</ion-option>
+        <ion-option value="Femenino">F</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Dirección</ion-label>
+      <ion-input type="text" [(ngModel)]="direccion"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <img (click)="takePicture();" src="img/icon-photo.png" class="logo-takePhoto" />
+    </ion-item>
+  </ion-list>
+
+
+
+  <button block primary (click)="onRegister(username,password,email,gender,direccion)">Registrarse</button>
+</ion-content>

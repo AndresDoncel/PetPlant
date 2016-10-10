@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>
+      <div class="content-toolbar">
+        <div class="toolbar-text">
+          <p style="color:#FFF;">PetPlant</p>
+        </div>
+        <div class="toolbar-image">
+          <img class="icon-toolbar" src="img/petplanticon.png">
+        </div>
+      </div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <div class="content-login">
+    <ion-item>
+      <ion-label floating>
+        <center>Usuario</center>
+      </ion-label>
+      <ion-input [(ngModel)]="user" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>
+        <center>Contraseña</center>
+      </ion-label>
+      <ion-input [(ngModel)]="pass" type="password"></ion-input>
+    </ion-item>
+    <img (click)="onLogin(user,pass)" src="img/login-icon.png" class="logo-login" />
+  </div>
+
+
+  <button class="btn-registro"  primary (click)="onRegistro()" ion-button full><center>Registrarse</center></button>
+
+
+
+</ion-content>

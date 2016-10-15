@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController,NavParams } from 'ionic-angular';
-import {ViewController, Platform} from 'ionic-angular';
-import {Http} from '@angular/http';
+import { LoadingController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import { ViewController, Platform } from 'ionic-angular';
+import { Http } from '@angular/http';
 
 /*
   Generated class for the LoginPage page.
@@ -14,12 +15,28 @@ import {Http} from '@angular/http';
 })
 export class PerfilPage {
 
-  
-    
-  constructor(private navCtrl: NavController,private http: Http,private params:NavParams) {
-  
+  object;
+  img;
+
+  constructor(private navCtrl: NavController, private http: Http, private params: NavParams) {
+    this.object = this.params.data;
+    console.log(this.params.data);
+    var link = "https://webservice-jhonny9550.c9users.io/getUserDates";
+    var Data = JSON.stringify({ user: this.object.username });
+    this.http.post(link, Data).subscribe(data => {
+      console.log(data.json());
+      if (data.json().success) {
+        console.log(data.json().img);
+        this.img = data.json().img;
+      }
+    }, error => {
+      console.log(JSON.stringify(error.json()));
+    });
+
   }
 
-   
+
+
+
 
 }

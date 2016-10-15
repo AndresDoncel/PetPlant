@@ -8,6 +8,7 @@ import { PerfilPage } from '../perfil/perfil';
 import { BuscarPage } from '../buscar/buscar';
 import { NotificationPage } from '../notification/notification';
 import { AjustesPage } from '../ajustes/ajustes';
+import { Chart } from 'ng2-chartjs2';
 
 @Component({
   templateUrl: 'build/pages/dashboard/dashboard.html',
@@ -22,28 +23,25 @@ export class DashboardPage {
   tab4Root: any = AjustesPage;
 
 
+
   username:String;
   registerDate = "";
   currentDate: Date;
   logins = [];
   logouts = [];
   img:String;
+  prueba:String;
+  object;
+
+  /*
+  Comentario Para hacer commmit
+  */
   
   constructor(private navCtrl: NavController,private http: Http,private params:NavParams) {
-    this.username = params.data.user;
-    var link = "https://webservice-jhonny9550.c9users.io/getUserDates";
-    var Data = JSON.stringify({user: this.username});
-    this.http.post(link,Data).subscribe(data => {
-        console.log(data.json());
-        if (data.json().success) {
-          this.registerDate = data.json().registerDate;
-          this.logins = data.json().logInDates;
-          this.logouts = data.json().logOutDates;
-          this.img = data.json().img;
-        }
-      }, error => {
-        console.log(JSON.stringify(error.json()));
-      });
+    this.object = {
+      username:this.params.data.username,
+      img:this.params.data.img
+    };
   }
 
   logOut(){

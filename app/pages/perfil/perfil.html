@@ -8,7 +8,9 @@
 
 <ion-content padding>
 
-<img src="{{img}}">
-<h2>Bienvenido {{username}}</h2>
+
+<h2>Bienvenido {{object.username}}</h2>
+
+<img [src]="object.img" class="imagen-usuario">
 
 </ion-content>

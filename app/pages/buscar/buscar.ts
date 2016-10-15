@@ -17,6 +17,7 @@ export class detallePlantaPage {
 })
 export class BuscarPage {
   items;
+ 
   constructor(public nav: NavController) {
 
     this.initializeItems();
@@ -199,6 +200,7 @@ export class BuscarPage {
         'colorLumi5': '#000000'
       },
     ]
+   
   }
 
   openNavDetailsPage(item) {
@@ -208,6 +210,7 @@ export class BuscarPage {
   getItems(ev) {
     // Reset items back to all of the items
     this.initializeItems();
+    //
 
     // set val to the value of the ev target
     var val = ev.target.value;

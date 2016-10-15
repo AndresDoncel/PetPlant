@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar primary>
     <ion-title>PetPlant</ion-title>
@@ -13,9 +12,9 @@
 
 <ion-content padding>
   <ion-tabs>
-  <ion-tab [root]="tab1Root" tabTitle="Perfil" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Buscar" tabIcon="search"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="Notificaciones" tabIcon="notifications"></ion-tab>
-  <ion-tab [root]="tab4Root" tabTitle="Ajustes" tabIcon="settings"></ion-tab>
+  <ion-tab [root]="tab1Root" tabTitle="Perfil" [rootParams]="object" tabIcon="home"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Buscar" [rootParams]="object" tabIcon="search"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Notificaciones" [rootParams]="object" tabIcon="notifications"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="Ajustes" [rootParams]="object" tabIcon="settings"></ion-tab>
 </ion-tabs>
 </ion-content>

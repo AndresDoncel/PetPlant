@@ -4,6 +4,7 @@ import { StatusBar } from 'ionic-native';
 
 import { info } from './pages/info/info';
 
+
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>'
 })

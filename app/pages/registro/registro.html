@@ -9,23 +9,27 @@
 
 <ion-content padding>
 
+	<center>	<img src="img/avatar.png"  /> </center>
+	
+
+<br><br>
   <ion-list>
 
     <ion-item>
       <ion-label floating>Usuario</ion-label>
-      <ion-input type="text" [(ngModel)]="username"></ion-input>
+      <ion-input type="text" [(ngModel)]="username" required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="password" required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Correo</ion-label>
-      <ion-input type="email" [(ngModel)]="email"></ion-input>
+      <ion-input type="email" [(ngModel)]="email" required></ion-input>
     </ion-item>
-
+    <br>
     <ion-item>
       <ion-label>Genero</ion-label>
       <ion-select [(ngModel)]="gender" cancelText="Cancelar" okText="Ok">
@@ -36,15 +40,12 @@
 
     <ion-item>
       <ion-label floating>Dirección</ion-label>
-      <ion-input type="text" [(ngModel)]="direccion"></ion-input>
+      <ion-input type="text" [(ngModel)]="direccion" required></ion-input>
     </ion-item>
 
-    <ion-item>
-      <img (click)="takePicture();" src="img/icon-photo.png" class="logo-takePhoto" />
-    </ion-item>
   </ion-list>
 
 
-
-  <button block primary (click)="onRegister(username,password,email,gender,direccion)">Registrarse</button>
+<br>
+  <button block primary (click)="onRegisterUsuario(username,password,email,gender,direccion)">Registrar Usuario</button>
 </ion-content>
